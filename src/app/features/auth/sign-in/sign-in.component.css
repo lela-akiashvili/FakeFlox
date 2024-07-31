@@ -12,8 +12,8 @@ main {
     url("../../../../assets/fakeflox bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   color: white;
   position: relative;
   font-family: "Inter", sans-serif;
@@ -27,7 +27,7 @@ form {
   z-index: 2;
   position: relative;
   border-radius: 5px;
-  animation: slide-up 1s forwards;
+  /* animation: slide-up 1s forwards; */
   display: flex;
   min-height: 100%;
   flex-direction: column;
