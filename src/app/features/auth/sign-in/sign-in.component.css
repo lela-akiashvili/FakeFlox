@@ -20,7 +20,7 @@ section {
 form {
   max-width: fit-content;
   margin: auto;
-  padding: 32px 28px;
+  padding: 2% 5%;
   background-color: #030303cc;
   font-family: "Inter", sans-serif;
   text-align: center;
@@ -172,6 +172,26 @@ form input {
     content: "\A";
     white-space: pre;
   }
+  form {
+    padding: 1em;
+  }
+
+  form h2 {
+    font-size: 16px;
+  }
+
+  form p {
+    font-size: 12px;
+  }
+
+  form button {
+    font-size: 12px;
+    padding: 1em 0.6em;
+  }
+
+  form input {
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 400px) {
@@ -191,7 +211,7 @@ form input {
   form button {
     font-size: 15px;
     font-weight: 500;
-    min-height: 60px;
+    padding: 1.2em 0.8em;
   }
 
   form input {
@@ -220,11 +240,16 @@ form input {
 @media (min-width: 760px) {
   form {
     max-width: 500px;
-    max-height: 100vh;
+    /* max-height: 100vh; */
+    padding: 2em 4em;
   }
 
   span {
     font-size: 16px;
+  }
+  form button {
+    /* font-size: 15px; */
+    padding: 1.5em 1em;
   }
 }
 
