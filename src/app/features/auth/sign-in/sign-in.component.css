@@ -16,27 +16,23 @@ main {
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center align items vertically */
+  align-items: center;
   color: white;
   position: relative;
   font-family: "Inter", sans-serif;
   padding: 0 1rem;
-  height: 100vh; /* Ensure the main container fills the viewport height */
+  min-height: fit-content;
 }
 
 form {
-  padding: 1rem;
+  padding: 2rem 1.8rem;
   background-color: #030303cc;
   text-align: center;
   z-index: 2;
-  position: relative;
   border-radius: 5px;
   animation: slide-up 1s forwards;
   display: flex;
-  height: 100%; /* Fill the height of the parent container */
-  width: 100%; /* Optionally fill the width */
   flex-direction: column;
-  justify-content: center;
 }
 
 form h2 {
@@ -140,14 +136,14 @@ form input {
   border: 1px solid #e50914;
 }
 
-.divaider {
+.divider {
   border-bottom: 1px solid rgb(116, 116, 116);
   margin: 24px !important;
 }
 
 @keyframes slide-up {
   0% {
-    transform: translateY(100%);
+    transform: translateY(20%);
     opacity: 0;
   }
   100% {
