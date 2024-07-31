@@ -18,6 +18,7 @@ main {
   position: relative;
   font-family: "Inter", sans-serif;
   padding:0 1rem;
+  max-height: 100vh;
 }
 form {
   padding: 1rem;
