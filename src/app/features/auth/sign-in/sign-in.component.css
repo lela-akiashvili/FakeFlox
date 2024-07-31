@@ -1,6 +1,7 @@
 header {
   position: relative;
 }
+
 img {
   position: absolute;
   max-width: 160px;
@@ -10,15 +11,12 @@ img {
 
 section {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../../../assets/fakeflox\ bg.jpg");
+    url("../../../../assets/fakeflox bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0 1rem;
-  min-height: 100vh;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
+
 form {
   max-width: fit-content;
   margin: auto;
@@ -30,34 +28,44 @@ form {
   position: relative;
   border-radius: 5px;
   animation: slide-up 1s forwards;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
 }
+
 form h2 {
   color: white;
   font-size: 19px;
   text-align: left;
 }
+
 form p {
   color: #e50914;
   font-size: 14px;
   line-height: 1.4;
   font-weight: 500;
 }
-p:nth-child(2){
-     margin-top: 21px;
+
+p:nth-child(2) {
+  margin-top: 21px;
 }
+
 form span {
   color: rgb(116, 116, 116);
 }
-form .sign-up{
-    font-weight: 700;
-    color: #e50914;
-    transition: all .2s ease-out;
-    cursor: pointer;
-    
+
+form .sign-up {
+  font-weight: 700;
+  color: #e50914;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
 }
-form .sign-up:hover{
+
+form .sign-up:hover {
   font-size: 14px;
 }
+
 form div {
   max-height: fit-content;
   display: grid;
@@ -75,6 +83,7 @@ form button {
   font-weight: 600;
   transition: 0.3s ease-out;
 }
+
 form input {
   background-color: #333333;
   border: none;
@@ -88,12 +97,15 @@ form input {
   opacity: 1;
   transition: all 0.2s ease-out;
 }
+
 .red {
   background-color: #e50914;
 }
+
 .red:hover {
   background-color: #be0710;
 }
+
 .blue {
   background-color: #1356c7;
   display: inline-flex;
@@ -101,27 +113,33 @@ form input {
   justify-content: center;
   gap: 1rem;
 }
+
 .blue:hover {
   background-color: transparent;
   border: 1px solid #d9d9d9;
 }
+
 .red,
 .blue {
   border: 1px solid #0000;
 }
+
 .transparent {
   color: #d9d9d9;
   border: 1px solid #d9d9d9;
   background-color: transparent;
 }
+
 .transparent:hover {
   color: #e50914;
   border: 1px solid #e50914;
 }
+
 .divaider {
   border-bottom: 1px solid rgb(116, 116, 116);
   margin: 24px !important;
 }
+
 /* @media (min-width:335px){
     section{
         padding-top: 1rem ;
@@ -139,6 +157,7 @@ form input {
     opacity: 1;
   }
 }
+
 /* @keyframes shrink {
     from {
       transform: scale(1);
@@ -147,62 +166,70 @@ form input {
       transform: scale(0.5);
     }
   } */
+
 @media (max-width: 330px) {
   span::after {
     content: "\A";
     white-space: pre;
   }
 }
+
 @media (min-width: 400px) {
   form {
     padding: 0.5em 2em;
   }
+
   form h2 {
     font-size: 24px;
   }
+
   svg {
     height: 2em;
     width: 2em;
   }
+
   form button {
     font-size: 15px;
-
     font-weight: 500;
     min-height: 60px;
   }
+
   form input {
     margin-bottom: 5px;
   }
 }
-@media (min-width:405px){
-    form{
-        padding: 1em 2em;
-    }
+
+@media (min-width: 405px) {
+  form {
+    padding: 1em 2em;
+  }
 }
+
 @media (max-width: 400px) {
   img {
     display: none;
   }
 }
+
 @media (min-width: 640px) {
   form {
     padding: 1em 3em 2em 3em;
-    min-height: 100vh;
-
   }
 }
+
 @media (min-width: 760px) {
-    form{
-        max-width: 500px;
-        max-height: 100vh;
-    }
+  form {
+    max-width: 500px;
+    max-height: 100vh;
+  }
+
   span {
     font-size: 16px;
   }
 }
+
 @media (min-width: 1200px) {
   form {
-    min-height: 100vh;
     padding: 3em;
   }
 }
