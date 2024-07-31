@@ -29,7 +29,6 @@ form {
   border-radius: 5px;
   animation: slide-up 1s forwards;
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
   justify-content: center;
 }
