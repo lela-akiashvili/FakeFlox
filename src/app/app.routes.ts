@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
-
+import { SignInComponent } from './features/auth/sign-in/sign-in.component';
+import { SignUpComponent } from './features/auth/sign-up/sign-up.component';
 export const routes: Routes = [
   {
     path: 'home',
@@ -8,12 +9,10 @@ export const routes: Routes = [
       import('./features/home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'login',
-    loadComponent: () =>
-      import('./features/auth/sign-in/sign-in.component').then(
-        (m) => m.SignInComponent
-      ),
+    path: 'auth',
+    loadChildren: () =>
+      import('./features/auth/auth.routes').then((m) => m.AUTH_ROUTES),
   },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {path:'',pathMatch:'full', redirectTo:'auth'}
   //   { path: '**', component: NotFoundComponent },
 ];

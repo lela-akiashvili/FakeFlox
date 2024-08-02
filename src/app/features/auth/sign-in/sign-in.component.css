@@ -1,57 +1,48 @@
 header {
   position: relative;
 }
-
 img {
-  max-width: 10rem;
-  margin: 2rem;
   position: absolute;
-  z-index: 1;
+  margin: 2rem;
+  max-width: 160px;
+  /* aspect-ratio: 3/4; */
 }
-
 main {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../../../assets/fakeflox bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: relative;
-  font-family: "Inter", sans-serif;
-  padding: 0 1rem;
-  min-height: fit-content;
-}
-
-form {
-  padding: 2rem 1.8rem;
-  background-color: #030303cc;
   text-align: center;
-  z-index: 2;
-  border-radius: 5px;
-  animation: slide-up 1s forwards;
-  display: flex;
-  flex-direction: column;
+  font-family: "Inter", sans-serif;
 }
-
-form h2 {
-  color: white;
+form,
+form div {
+  display: grid;
+  gap: 0.5rem;
+}
+form {
+  z-index: 2;
+  max-width: 90%;
+  margin: auto;
+  gap: 1.4rem;
+  background-color: #030303cc;
+  padding: 2rem 1.8rem;
+  border-radius: 7px;
+  animation: slide-up 1s ease-out;
+}
+h2 {
   font-size: 19px;
+  color: white;
   text-align: left;
 }
-
-form p {
+p {
   color: #e50914;
+  font-weight: 600;
   font-size: 14px;
   line-height: 1.4;
-  font-weight: 500;
 }
-
-p:nth-child(2) {
-  margin-top: 21px;
-}
-
 form span {
   color: rgb(116, 116, 116);
 }
@@ -66,30 +57,12 @@ form .sign-up {
 form .sign-up:hover {
   font-size: 14px;
 }
-
-form div {
-  max-height: fit-content;
-  display: grid;
-  gap: 0.5rem;
-  margin: 1rem 0;
-}
-
-form button {
-  border-radius: 5px;
-  font-size: 13px;
-  color: #f2f2f2;
-  cursor: pointer;
-  padding: 1.2rem 0.8rem;
-  line-height: 1;
-  font-weight: 600;
-  transition: 0.3s ease-out;
-}
-
 form input {
   background-color: #333333;
   border: none;
   border-radius: 5px;
   height: 50px;
+  letter-spacing: 1px;
   color: #f2f2f2;
   font-size: 15px;
   outline: none;
@@ -98,9 +71,22 @@ form input {
   opacity: 1;
   transition: all 0.2s ease-out;
 }
+form button {
+  font-size: 13px;
+  color: #f2f2f2;
+  cursor: pointer;
+  padding: 1.2rem 0.8rem;
+  line-height: 1;
+  font-weight: 600;
+  transition: 0.3s ease-out;
+  border-radius: 5px;
+  max-height: fit-content;
+}
+
 
 .red {
   background-color: #e50914;
+height: 45.52px;
 }
 
 .red:hover {
@@ -112,7 +98,7 @@ form input {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .blue:hover {
@@ -129,6 +115,7 @@ form input {
   color: #d9d9d9;
   border: 1px solid #d9d9d9;
   background-color: transparent;
+  height: 45.52px;
 }
 
 .transparent:hover {
@@ -138,9 +125,11 @@ form input {
 
 .divider {
   border-bottom: 1px solid rgb(116, 116, 116);
-  margin: 24px !important;
+  margin:0 24px;
 }
-
+a{
+  all: unset;
+}
 @keyframes slide-up {
   0% {
     transform: translateY(20%);
@@ -158,63 +147,32 @@ form input {
     white-space: pre;
   }
 }
-
-@media (min-width: 400px) {
-  form {
-    padding: 0.5rem 2rem;
-  }
-
-  form h2 {
+@media (min-width:405px){
+  h2{
     font-size: 24px;
   }
-
-  svg {
-    height: 2rem;
-    width: 2rem;
+  .input-div input{
+   margin-bottom: 5px;
   }
-
-  form button {
+  form button{
+    height: 60px;
     font-size: 15px;
     font-weight: 500;
-    min-height: 60px;
-  }
-
-  form input {
-    margin-bottom: 5px;
+    padding: 16px 12px;
   }
 }
-
-@media (min-width: 405px) {
-  form {
-    padding: 1rem 2rem;
-  }
-}
-
-@media (max-width: 400px) {
-  img {
-    display: none;
-  }
-}
-
-@media (min-width: 640px) {
-  form {
-    padding: 1rem 3rem 2rem 3rem;
-  }
-}
-
-@media (min-width: 760px) {
-  form {
+@media (min-width:768px){
+  form{
     max-width: 500px;
-    max-height: 100%;
+    padding: 3rem;
   }
-
-  span {
+  form span{
     font-size: 16px;
+    font-weight: normal;
   }
 }
-
-@media (min-width: 1200px) {
-  form {
-    padding: 3rem;
+@media (min-width:800px){
+  form{
+    height: 100vh;
   }
 }

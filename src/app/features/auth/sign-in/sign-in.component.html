@@ -4,11 +4,11 @@
 <main>
   <form action="">
     <h2>Sign In</h2>
-    <p>
-      Pay attention: this is not the original Netflix sign in. Don't insert your
-      real credentials here!
-    </p>
-    <div>
+    <div class="input-div">
+      <p>
+        Pay attention: this is not the original Netflix sign in. Don't insert
+        your real credentials here!
+      </p>
       <input type="text" placeholder="E-mail" />
       <input type="text" placeholder="Password" />
     </div>
@@ -24,8 +24,8 @@
           y="0px"
           viewBox="0 0 48 48"
           enable-background="new 0 0 48 48"
-          height="20px"
-          width="20px"
+          height="1rem"
+          width="1rem"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -56,6 +56,9 @@
     </div>
     <div class="divider"></div>
 
-    <p><span>Haven't you registered yet?</span> <span class="sign-up"> Sign Up </span></p>
+    <p>
+      <span>Haven't you registered yet?</span>
+    <a routerLink="/auth/sign-up"> <span class="sign-up"> Sign Up </span></a> 
+    </p>
   </form>
 </main>
