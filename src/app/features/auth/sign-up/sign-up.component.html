@@ -2,25 +2,78 @@
   <img src="../assets/Fakeflix_logo.png" alt="" />
 </header>
 <main>
-  <form action="">
+  <form action="" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
     <h2>Sign Up</h2>
     <div class="input-div">
       <p>
         Pay attention: this is not the original Netflix sign in. Don't insert
         your real credentials here!
       </p>
-      <input type="text" placeholder="Your name" />
-      <input type="email" placeholder="E-mail" />
-      <input type="password" placeholder="Password" />
-      <input type="password" placeholder="Repeat your password" />
+      <input
+        type="text"
+        placeholder="Your name"
+        formControlName="userName"
+        [ngClass]="{
+          'error-border': controls.userName.dirty && controls.userName.invalid
+        }"
+      />
+      @if(controls.userName.errors?.['minlength']){
+      <p class="error">Must be at least 5 letters</p>
+      } @else if(controls.userName.errors?.['maxlength']){
+      <p class="error">Must not be longer than 20 letters</p>
+      } @else if(controls.userName.dirty&&controls.userName.errors){
+      <p class="error">UserName is required</p>
+      }
+      <input
+        type="email"
+        placeholder="E-mail"
+        formControlName="email"
+        [ngClass]="{
+          'error-border': controls.email.dirty && controls.email.invalid
+        }"
+      />
+      @if(controls.email.errors?.['email']){
+      <p class="error">Email is invalid</p>
+      }
+      <input
+        type="text"
+        placeholder="Password"
+        formControlName="password"
+        [ngClass]="{
+          'error-border': controls.password.dirty && controls.password.invalid
+        }"
+      />
+      @if(controls.password.errors?.['pattern']){
+      <p class="error">
+        Must be longer than 8 letters, contain: A-Z, a-z, 0-9, !#$%^&*
+      </p>
+      }
+      <input
+        type="password"
+        placeholder="Repeat your password"
+        formControlName="confirmPassword"
+        [ngClass]="{
+          'error-border': controls.confirmPassword.dirty && signUpForm.errors
+        }"
+      />
+      @if( controls.confirmPassword.dirty &&
+      signUpForm.errors?.['passwordsMatch']){
+      <p class="error">
+        {{ signUpForm.errors?.["passwordsMatch"] }}
+      </p>
+      }
     </div>
     <div class="buttons">
-      <button class="red">Sign in</button>
+      @if(errorMessage){
+      <p class="error">{{ errorMessage }}</p>
+      }
+      <button class="red" type="submit" [disabled]="signUpForm.invalid">
+        Sign in
+      </button>
     </div>
     <div class="divider"></div>
-
     <p>
-      <span>Haven't you registered yet?</span>
+      <span>Already Registered?</span>
       <a routerLink="/auth/sign-in"> <span class="sign-up"> Sign In </span></a>
     </p>
   </form>

@@ -1,1 +1,186 @@
-<p>home works!</p>
+<header>
+  <img class="logo" src="../assets/Fakeflix_logo.png" />
+  @if (authService.currentUserSig()!==null) {
+  <div>
+    <span
+      ><img
+        (click)="toggleItems()"
+        src="../../../assets/Netflix-avatar.png"
+        alt=""
+      />
+      @if(showItems){
+      <i class="bi bi-caret-down"></i>
+      <button (click)="logOut()">Log Out</button>
+      }
+    </span>
+  </div>
+  }
+</header>
+<main>
+  @if(randomTrendingMovie){
+  <section
+    class="cover"
+    [style.background-image]="
+      'url(' +
+      'https://image.tmdb.org/t/p/original' +
+      randomTrendingMovie.poster_path +
+      ')'
+    "
+  >
+    <div>
+      <h1>{{ randomTrendingMovie.title }}</h1>
+      <p>{{ randomTrendingMovie.overview }}</p>
+      <button>Play</button>
+      <button>More Info</button>
+    </div>
+  </section>
+  }
+
+  <section class="movies-section">
+    <div class="sect">
+      <h2>Netflix Originals</h2>
+      <div class="movies">
+        @for (movie of netflixOriginals; track $index) {
+        <div class="movie">
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+            alt="{{ movie.name }}"
+          />
+          <div class="desc">
+            <h3>{{ movie.name }}</h3>
+            <p>{{ getGenreNames(movie.genre_ids) }}</p>
+            <p>{{ movie.overview }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="sect">
+      <h2>Trending Now</h2>
+      <div class="movies">
+        @for (movie of trendingMovies; track $index) {
+        <div class="movie">
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+            alt="{{ movie.title }}"
+          />
+          <div class="desc">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ getGenreNames(movie.genre_ids) }}</p>
+            <p>{{ movie.overview }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="sect">
+      <h2>Top Rated</h2>
+      <div class="movies">
+        @for (movie of trendingMovies; track $index) {
+        <div class="movie">
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+            alt="{{ movie.title }}"
+          />
+          <div class="desc">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ getGenreNames(movie.genre_ids) }}</p>
+            <p>{{ movie.overview }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="sect">
+      <h2>Action Movies</h2>
+      <div class="movies">
+        @for (movie of actionMovies; track $index) {
+        <div class="movie">
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+            alt="{{ movie.title }}"
+          />
+          <div class="desc">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ getGenreNames(movie.genre_ids) }}</p>
+            <p>{{ movie.overview }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="sect">
+      <h2>Romance Movies</h2>
+      <div class="movies">
+        @for (movie of romanceMovies; track $index) {
+        <div class="movie">
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+            alt="{{ movie.title }}"
+          />
+          <div class="desc">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ getGenreNames(movie.genre_ids) }}</p>
+            <p>{{ movie.overview }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="sect">
+      <h2>Horror Movies</h2>
+      <div class="movies">
+        @for (movie of horrorMovies; track $index) {
+        <div class="movie">
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+            alt="{{ movie.title }}"
+          />
+          <div class="desc">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ getGenreNames(movie.genre_ids) }}</p>
+            <p>{{ movie.overview }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="sect">
+      <h2>Documentaries</h2>
+      <div class="movies">
+        @for (movie of documentaries; track $index) {
+        <div class="movie">
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+            alt="{{ movie.title }}"
+          />
+          <div class="desc">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ getGenreNames(movie.genre_ids) }}</p>
+            <p>{{ movie.overview }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="sect">
+      <h2>Khoi Lammm</h2>
+      <div class="movies">
+        @for (movie of trendingMovies; track $index) {
+        <div class="movie">
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+            alt="{{ movie.title }}"
+          />
+          <div class="desc">
+            <h3>{{ movie.title }}</h3>
+            <p>{{ getGenreNames(movie.genre_ids) }}</p>
+            <p>{{ movie.overview }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+</main>
+<footer></footer>

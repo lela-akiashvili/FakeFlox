@@ -5,3 +5,22 @@
 body{
     background-color: rgba(20,20,20,255);
 }
+::-webkit-scrollbar {
+    width: 0;
+    height: 0px; /* for Chrome */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* color of the track */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* color of the handle */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
