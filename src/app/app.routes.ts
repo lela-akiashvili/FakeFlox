@@ -10,6 +10,6 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./features/auth/auth.routes').then((m) => m.AUTH_ROUTES),
   },
-  {path:'',pathMatch:'full', redirectTo:'home'}
+  {path:'',pathMatch:'full', redirectTo:'auth/sign-in'}
   //   { path: '**', component: NotFoundComponent },
 ];
