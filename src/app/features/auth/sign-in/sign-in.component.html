@@ -21,7 +21,7 @@
       <p class="error">Email is required</p>
       }
       <input
-        type="text"
+        type="password"
         placeholder="Password"
         formControlName="password"
         [ngClass]="{
@@ -36,7 +36,7 @@
       <p class="error">{{errorMessage}}</p>
     }
     <div class="buttons">
-      <button class="red" type="submit" [disabled]="signInForm.invalid">Sign in</button>
+      <button class="red" type="submit">Sign in</button>
       <button class="blue">
         <svg
           stroke="currentColor"
