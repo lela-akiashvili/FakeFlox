@@ -39,4 +39,16 @@ export class SignInComponent {
       }
     });
   }
+  anonymousLogin(){
+    this.authService.signInAnonymously().subscribe({
+      next:(userCredential)=>{
+        this.authService.currentUserSig!==null;
+        console.log('Anonymous login successful', userCredential);
+        this.router.navigateByUrl('/home');
+      },
+      error: (error) => {
+        console.error('Error during anonymous login', error);
+      },
+    })
+  }
 }

@@ -41,12 +41,15 @@ export class AuthService {
     ).then(() => {});
     return from(promise);
   }
-  anonymousLogin(): Observable<UserCredential> {
+
+  signInAnonymously(): Observable<UserCredential> {
     const promise = signInAnonymously(this.firebaseAuth);
     return from(promise);
   }
+  
   logOut(): Observable<void> {
     const promise = signOut(this.firebaseAuth);
     return from(promise);
   }
+ 
 }
